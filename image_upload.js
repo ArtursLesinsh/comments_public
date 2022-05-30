@@ -10,7 +10,7 @@ form.onsubmit = function(event) {
 }
 
 /* функция, которая делает запрос, откуда нам брать картинки, то есть в файл api.php, а он уже дальше*/
-xhttp.get('api.php?object=image&action=getAll', function (response) {
+xhttp.get('https://average-tenth.000webhostapp.com/api.php?object=image&action=getAll', function (response) {
     for (let image of response.images) {
         displayImage(image.id);
     }
@@ -64,7 +64,7 @@ function deleteImage (event) {
     const id = this.dataset.id;
     const data = new FormData();
     data.set('id', id);
-    xhttp.post('api.php?object=image&action=delete', data, function (response) {
+    xhttp.post('https://average-tenth.000webhostapp.com/api.php?object=image&action=delete', data, function (response) {
         btn.parentNode.remove();
     });
 }

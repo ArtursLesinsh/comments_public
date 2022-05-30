@@ -8,7 +8,7 @@ const background_container = document.querySelector('.background_container');
 const image_template = background_container.querySelector('.template');
 
 /* здесь мы обьединили 2 цикла, которые выполняют одни и те-же действия, но на разных веб страниц */
-xhttp.get('api.php?object=batch&action=getAll', function (response) {
+xhttp.get('https://average-tenth.000webhostapp.com/api.php?object=batch&action=getAll', function (response) {
     for (let image of response.images) {
         addBackgroundImage('endpoint.php?name=png&id=' + image.id);
     }
@@ -55,7 +55,7 @@ function addComment(id, author, message) {
         const data = new FormData();
         data.set('id', id);
 
-        xhttp.post('api.php?object=comment&action=delete', data, function (response) {
+        xhttp.post('https://average-tenth.000webhostapp.com/api.php?object=comment&action=delete', data, function (response) {
             new_comment.remove();
         });
     };
@@ -64,7 +64,7 @@ function addComment(id, author, message) {
         const data = new FormData();
         data.set('id', id);
 
-        xhttp.post('api.php?object=comment&action=get', data, function (response) {
+        xhttp.post('https://average-tenth.000webhostapp.com/api.php?object=comment&action=get', data, function (response) {
             popup.style.display = 'flex';
             form_update.querySelector('[name="id"]').value = response.comment.id;
             form_update.querySelector('[name="author"]').value = response.comment.author;
