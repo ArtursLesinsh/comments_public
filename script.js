@@ -10,7 +10,7 @@ const image_template = background_container.querySelector('.template');
 /* здесь мы обьединили 2 цикла, которые выполняют одни и те-же действия, но на разных веб страниц */
 xhttp.get('https://average-tenth.000webhostapp.com/api.php?object=batch&action=getAll', function (response) {
     for (let image of response.images) {
-        addBackgroundImage('endpoint.php?name=png&id=' + image.id);
+        addBackgroundImage('https://average-tenth.000webhostapp.com/endpoint.php?name=png&id=' + image.id);
     }
     for (let comment of response.comments) {
         addComment(comment.id, comment.author, comment.message);

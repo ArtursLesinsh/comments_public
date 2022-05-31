@@ -30,7 +30,7 @@ function displayImage(id) {
     button.onclick = deleteImage;
 
     const img = document.createElement('img');
-    const url = 'endpoint.php?name=png&id=' + id;
+    const url = 'https://average-tenth.000webhostapp.com/endpoint.php?name=png&id=' + id;
     img.src = url
     img.width = 200;
 
